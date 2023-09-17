@@ -1,0 +1,52 @@
+
+
+body {
+    padding: 0;
+    margin: 0;
+   text-align: center;
+   font-family: 'Bigelow Rules', cursive;  
+}
+  
+ 
+  .logo{
+    height: 300px;
+    width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(2px 3px 5px grey);
+  }
+  main{
+  /*  height: calc(100vh - 60px);*/
+  background-image: url(/images/page1\ background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+    display: flex;
+    align-items: center;;
+    justify-content: center;
+    flex-direction: column;
+  }
+  main button{
+    font-family: 'Bigelow Rules', cursive;  
+    width: 250px;
+    height: 60px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: rgb(62, 42, 24);
+    color:white;
+    
+  }
+  main button:hover{
+    transform: translateY(5px);
+    transition: 0.3s;
+  }
+
+  h1{
+    color: white;
+    font-size: 40px;
+  }
