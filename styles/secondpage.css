@@ -142,3 +142,68 @@ body{
     font-size: 40px;
 
 }
+
+#game-screen{
+  /*  display: none;*/
+    align-content: center;
+  /*  background-image: url(/images/page1\ background.jpeg);*/
+   
+}
+.brstick{
+   height: 300px;
+   width: 350px;
+   position:fixed;
+   top: 45vh;
+   left:5vw;
+   z-index: 100;
+
+}
+.message{
+    background: none;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24)0px 3px 8px;
+    border-radius: 5%;
+}
+
+#pot {
+    bottom: 15%;
+    position: absolute;
+    -webkit-animation: linear infinite;
+    -webkit-animation-name: run;
+    -webkit-animation-duration: 6s;
+    mix-blend-mode: darken;
+  }
+  @-webkit-keyframes run {
+    0% {
+      left: 0%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 0;    
+    }
+  }
+
+/* #float {
+    position: relative;
+    -webkit-animation: floatBubble 2s infinite  normal ease-out;
+    animation: floatBubble 2s infinite  normal ease-out;
+}
+@-webkit-keyframes floatBubble {
+    0% {
+        top:500px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@keyframes floatBubble {
+    0% {
+        top:500px;
+    }
+    100% {
+        top: 0px;
+    }
+} */
+
