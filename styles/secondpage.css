@@ -2,6 +2,7 @@
 *{
     padding: 0;
     margin: 0;
+   overflow: hidden;
     box-sizing: border-box;
     font-family: 'Bigelow Rules', cursive;  
 }
@@ -11,13 +12,14 @@ body{
    
     background-image: url(/images/image2.jpeg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     height: 100vh;
       display: flex;
       align-items: center;;
       justify-content: center;
       flex-direction: column;
       padding: 20px;
+      animation: moveRight 6s timing-function delay iteration-count direction fill-mode;
     }
     .container{
         position: relative;
@@ -143,12 +145,7 @@ body{
 
 }
 
-#game-screen{
-  /*  display: none;*/
-    align-content: center;
-  /*  background-image: url(/images/page1\ background.jpeg);*/
-   
-}
+
 .brstick{
    height: 300px;
    width: 350px;
@@ -164,46 +161,37 @@ body{
     box-shadow: rgba(0, 0, 0, 0.24)0px 3px 8px;
     border-radius: 5%;
 }
-
-#pot {
-    bottom: 15%;
-    position: absolute;
-    -webkit-animation: linear infinite;
-    -webkit-animation-name: run;
-    -webkit-animation-duration: 6s;
+#fireball{
+    width:100px;
+    height: 100px;
     mix-blend-mode: darken;
-  }
-  @-webkit-keyframes run {
-    0% {
-      left: 0%;
-    }
-    50% {
-      left: 100%;
-    }
-    100% {
-      left: 0;    
-    }
-  }
+}
 
-/* #float {
+
+  #game-screen{
+    align-content: center;
+    display: flex;
+   padding: 0px 0px;
     position: relative;
-    -webkit-animation: floatBubble 2s infinite  normal ease-out;
-    animation: floatBubble 2s infinite  normal ease-out;
-}
-@-webkit-keyframes floatBubble {
-    0% {
-        top:500px;
-    }
-    100% {
-        top: 0px;
-    }
-}
-@keyframes floatBubble {
-    0% {
-        top:500px;
-    }
-    100% {
-        top: 0px;
-    }
-} */
+  /*  background-image: url('/images/gamepage.png');*/
+    background-size: cover;
+    animation: background 6s infinite linear reverse;
+    width:100vw;
+    height: 100vh;
+
+  }
+  .fireimg{
+    width:100px;
+    height: 100px;
+    mix-blend-mode: darken;  
+  }
+   .score{
+    margin: 20px;
+    width: 50px;
+    font-size: 20px;
+   }
+  
+  
+
+
 

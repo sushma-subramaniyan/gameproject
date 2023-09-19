@@ -14,8 +14,13 @@
 
 
 </head>
-<body onkeydown="getKeyAndMove(event)">
+<body onkeydown="index.getKeyAndMove(event)">
+   
       <div class="container" id ="container1" style="display:none">
+        <div>
+            <p>Score: <span id="score">0</span></p>
+            <p>Lives: <span id="lives">3</span></p>
+          </div>
         <div class="name">
             <label>Enter Your Name</label>
             <input type="text" name="name" size="50">
@@ -117,35 +122,42 @@
     <button>Go With This</button>
   </div>
 </div>
-    </div>
+      </div>
+   
    
     <div class="background"></div>
 
     <div id="game-screen"> 
        
 
-       <img src="/images/broomstick.png" class="brstick" id="brstick" alt="brromstick"> 
+       <!--<img src="/images/broomstick1.png" class="brstick" id="brstick" alt="brromstick"> 
     
       <!-- <div class="message">
         <p>ArrowUp to Control</p>
        </div>-->
 
       <div class="score">
-        <span class = "score_title"></span>
-        <span class="score_val"></span>
+        <h2>Stats</h2>
+        <p>Score: <span id="score">0</span></p>
+        <p>Lives: <span id="lives">3</span></p>  
 
     
       </div>
 
-      <div id="pot">
-        <img src="/images/fireball.png" width=100px height=100px>
+      <div id="firstBall">
+      
       </div>  
 
     </div>
     <div id="game-end">
+    
 
     </div>
+    <script type="text/javascript" src="js/obstacle.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
     
 </body>
 </html>

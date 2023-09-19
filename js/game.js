@@ -1,41 +1,69 @@
- function startGame() {
-       document.getElementById("container1").style.display = "none";
-       document.getElementById("game-screen").style.display = "block";
+ class Game { 
+    constructor(){
+        this.gameScreen=document.getElementById('game-screen');
+        this.container= document.getElementById('container1');
+        this.gameEndScreen = document.getElementById('game-end');
+        this.gameOver=false;
+        this.score=0;
+        this.lives=3;
+        this.obstacles=[];
+        this.animateId=0;
+        this.player = new Player(this.gameScreen, 230, 550, 280, 300)
+
+      
+    }
+
+     start() {
+       this.container.style.display = "none";
+       this.gameScreen.style.display = "block";
+       this.gameEndScreen.style.display = "none";
+       this.gameLoop()
      }
-     var objImage = null;
-     function init() {
-         objImage = document.getElementById("brstick");
-         objImage.style.position = "relative";
-         objImage.style.left = "0px";
-         objImage.style.top = "0px";
-     }
-     function getKeyAndMove(e) {
-         var key_code = e.which || e.keyCode;
-         switch (key_code) {
-             case 37: //left arrow key
-                 moveLeft();
-                 break;
-             case 38: //Up arrow key
-                 moveUp();
-                 break;
-             case 39: //right arrow key
-                 moveRight();
-                 break;
-             case 40: //down arrow key
-                 moveDown();
-                 break;
-         }
-     }
-     function moveLeft() {
-         objImage.style.left = parseInt(objImage.style.left) - 5 + "px";
-     }
-     function moveUp() {
-         objImage.style.top = parseInt(objImage.style.top) - 5 + "px";
-     }
-     function moveRight() {
-         objImage.style.left = parseInt(objImage.style.left) + 5 + "px";
-     }
-     function moveDown() {
-         objImage.style.top = parseInt(objImage.style.top) + 5 + "px";
-     }
-     window.onload = init;
+        gameLoop(){
+            this.update()
+            if(this.animateId % 200===0){
+                this.obstacles.push(
+                    new Obstacle(
+                      this.gameScreen,
+                      Math.random() * (this.gameScreen.clientWidth - 40 - 100) + 50,
+                      -200,
+                      80,
+                      40
+                    )
+                  )
+            }
+      document.getElementById('score').innerText = this.score;
+        document.getElementById('lives').innerText = this.lives;
+        if (this.lives < 1) {
+            this.gameOver = true
+          }
+      
+          if (this.gameOver) {
+            this.gameScreen.style.display = 'none'
+            this.gameEndScreen.style.display = 'block'
+          } else {
+            this.animateId = requestAnimationFrame(() => this.gameLoop())
+          }
+        }
+
+        update() {
+           this.player.move()
+            console.log(this.obstacles)
+            const nextObstacles = []
+            this.obstacles.forEach(obstacle => {
+              obstacle.move()
+              if (this.player.didCollide(obstacle)) {
+                this.lives -= 1
+                obstacle.element.remove()
+              } else if (obstacle.top > this.gameScreen.clientHeight) {
+                this.score += 1
+                obstacle.element.remove()
+              } else {
+                nextObstacles.push(obstacle)
+              }
+
+            })
+            this.obstacles = nextObstacles
+          }
+    }
+  
