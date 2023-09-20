@@ -14,13 +14,9 @@
 
 
 </head>
-<body onkeydown="index.getKeyAndMove(event)">
+<body onkeydown="index.getKeyAndMove(event)" onkeyup="index.getKeyUpMove(event)">
    
-      <div class="container" id ="container1" style="display:none">
-        <div>
-            <p>Score: <span id="score">0</span></p>
-            <p>Lives: <span id="lives">3</span></p>
-          </div>
+      <div class="container" id ="container1">
         <div class="name">
             <label>Enter Your Name</label>
             <input type="text" name="name" size="50">
@@ -30,7 +26,6 @@
             <div class="card-image">
                 <div class="griff">
                     <img src="/images/select-player/griffindor.jpeg">
-
                 </div>
            
         </div>
@@ -46,7 +41,7 @@
         </div>
         </div>
         <div class="selector">
-          <button onclick="startGame()">go with this</button>
+          <button onclick="index.start()">go with this</button>
         </div>
       </div>
       
@@ -154,8 +149,8 @@
 
     </div>
     <script type="text/javascript" src="js/obstacle.js"></script>
-    <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
     

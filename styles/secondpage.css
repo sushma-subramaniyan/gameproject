@@ -178,6 +178,7 @@ body{
     animation: background 6s infinite linear reverse;
     width:100vw;
     height: 100vh;
+    display: none;
 
   }
   .fireimg{

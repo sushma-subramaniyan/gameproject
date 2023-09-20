@@ -50,3 +50,7 @@ body {
     color: white;
     font-size: 40px;
   }
+
+  .game-end{
+    display:none;
+  }
