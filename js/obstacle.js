@@ -6,7 +6,7 @@ class Obstacle {
       this.height = height
       this.width = width
       this.element = document.createElement('img')
-      this.element.src = '../images/'+imageName;
+      this.element.src = 'images/'+imageName;
       this.element.classList.add("fireimg");
       this.element.style.position = 'absolute'
       this.element.style.left = `${this.left}px`
