@@ -1,6 +1,5 @@
 class Index{
     constructor(){
-      
     }
     start(){
         this.game= new Game();
@@ -35,7 +34,6 @@ class Index{
                 this.game.player.directionY = 0
               }
         }
-        
         }
        var index= new Index();
     

@@ -17,62 +17,22 @@
         <img src="images/logo.png"class="logo" alt="logo image">
         <div id="game-intro" >
         <!-------------------------start button start------------------------------------>
-            <button onclick="Redirect()">Start Button</button>  
+            <button onclick="home.redirect()">Start Button</button>  
             <p>Use left and right arrow keys to control</p> 
+        
           </div>    
         <!----------------------------game end-------------------------------------------------->
        <div class="game-end" id ="gameend">
         <h1>Game Over</h1>
-        <button onclick="Redirect()">Restart</button>
+        <p>High Score: <span id="highscore">0</span></p>
+        <p>Top PlayerName : <span id="prname">3</span></p> 
+        <button onclick="home.redirect()">Restart</button>
        </div> 
        
     </main>
 
 </body>
 
-<script>
-  function Redirect() {
-  location.replace("game.html");
-}
+<script type="text/javascript" src="js/home.js"></script>
 
-let gameend = getCookie("gameend");
-console.log("1  "+gameend);
-if (gameend != "") {
-  document.getElementById("game-intro").style.display = "none";
-  document.getElementById("gameend").style.display = "block";
-  document.cookie="gameend=";  
-  let gameend1 = getCookie("gameend");
-  console.log("2 "+gameend1);
-
-}else{
-  document.getElementById("gameend").style.display = "none";
-  document.getElementById("game-intro").style.display = "block";
-  console.log("3 "+gameend);
-
-}
-
-
-function setCookie(cname, cvalue, exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  let expires = "expires="+d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  let name = cname + "=";
-  let ca = document.cookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-</script> 
 </html>
