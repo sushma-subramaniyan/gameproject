@@ -184,7 +184,7 @@ body{
     display: flex;
    padding: 0px 0px;
     position: relative;
-   background-image: url('/images/gamepage.png');
+   background-image: url('../images/gamepage.png');
     background-size: cover;
    
     width:100vw;
