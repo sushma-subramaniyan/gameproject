@@ -17,6 +17,7 @@
 <body onkeydown="index.getKeyAndMove(event)" onkeyup="index.getKeyUpMove(event)">
    
       <div class="container" id ="container1">
+       
         <div class="name">
             <label>Enter Your Name</label>
             <input type="text" name="name" size="50">
@@ -25,7 +26,7 @@
         <div class="card">
             <div class="card-image">
                 <div class="griff">
-                    <img src="/images/select-player/griffindor.jpeg">
+                    <img src="images/select-player/griffindor.png">
                 </div>
            
         </div>
@@ -48,8 +49,8 @@
       <!-----------------------Hufflepuff--------------------------->
   <div class="card">
     <div class="card-image">
-        <div class="griff">
-            <img src="/images/select-player/hufflepuff.png">
+        <div class="hufflepuff">
+            <img src="images/select-player/hufflepuff.png">
 
         </div>
    
@@ -66,14 +67,14 @@
 </div>
 </div>
 <div class="selector">
-    <button>Go With This</button>
+    <button onclick="index.start()">Go With This</button>
   </div>
 </div>
 <!---------------------Slytherin--------------------------->
 <div class="card">
     <div class="card-image">
-        <div class="griff">
-            <img src="/images/select-player/slytherin.png">
+        <div class="slytherin">
+            <img src="images/select-player/slytherin.png">
 
         </div>
    
@@ -90,14 +91,14 @@
 </div>
 </div>
 <div class="selector">
-    <button>Go With This</button>
+    <button onclick="index.start()">Go With This</button>
   </div>
 </div>
 <!---------------------Ravenclaw--------------------------->
 <div class="card">
     <div class="card-image">
-        <div class="griff">
-            <img src="/images/select-player/ravenclaw.png">
+        <div class="ravenclaw">
+            <img src="images/select-player/ravenclaw.png">
 
         </div>
    
@@ -114,10 +115,16 @@
 </div>
 </div>
 <div class="selector">
-    <button>Go With This</button>
+    <button onclick="index.start()">Go With This</button>
   </div>
 </div>
-      </div>
+
+<div class="highscore">
+   
+    <p>Score: <span id="hscore">0dvdfd</span></p>
+  </div>
+</div>
+  
    
    
     <div class="background"></div>
@@ -132,16 +139,13 @@
        </div>-->
 
       <div class="score">
-        <h2>Stats</h2>
         <p>Score: <span id="score">0</span></p>
-        <p>Lives: <span id="lives">3</span></p>  
-
-    
+        <p>Lives: <span id="lives">3</span></p> 
       </div>
 
-      <div id="firstBall">
+     <!-- <div id="firstBall">
       
-      </div>  
+      </div>  -->
 
     </div>
     <div id="game-end">

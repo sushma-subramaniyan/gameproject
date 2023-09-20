@@ -8,27 +8,71 @@
   <link rel="stylesheet" href="./styles/style.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap" rel="stylesheet">
-  <script>
-    function Redirect() {
-    location.replace("game.html");
- }
-  </script>
-  <title>Harry Potter</title>
+
+  <title>Hogwarts</title>
     </head>
 <body>
     <main> 
-      <div id="game-intro">
-        <img src="/images/logo.png"class="logo" alt="logo image">
+     
+        <img src="images/logo.png"class="logo" alt="logo image">
+        <div id="game-intro" >
         <!-------------------------start button start------------------------------------>
-            <button onclick="Redirect()">Start Button</button>   
+            <button onclick="Redirect()">Start Button</button>  
+            <p>Use left and right arrow keys to control</p> 
           </div>    
         <!----------------------------game end-------------------------------------------------->
-       <div class="game-end">
+       <div class="game-end" id ="gameend">
         <h1>Game Over</h1>
-        <button>Restart</button>
+        <button onclick="Redirect()">Restart</button>
        </div> 
        
     </main>
 
 </body>
+
+<script>
+  function Redirect() {
+  location.replace("game.html");
+}
+
+let gameend = getCookie("gameend");
+console.log("1  "+gameend);
+if (gameend != "") {
+  document.getElementById("game-intro").style.display = "none";
+  document.getElementById("gameend").style.display = "block";
+  document.cookie="gameend=";  
+  let gameend1 = getCookie("gameend");
+  console.log("2 "+gameend1);
+
+}else{
+  document.getElementById("gameend").style.display = "none";
+  document.getElementById("game-intro").style.display = "block";
+  console.log("3 "+gameend);
+
+}
+
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+</script>
 </html>

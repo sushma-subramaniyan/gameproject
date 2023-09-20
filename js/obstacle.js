@@ -1,12 +1,12 @@
 class Obstacle {
-    constructor(gameScreen, left, top, height, width) {
+    constructor(gameScreen, left, top, height, width,imageName) {
       this.gameScreen = gameScreen
       this.left = left
       this.top = top
       this.height = height
       this.width = width
       this.element = document.createElement('img')
-      this.element.src = '../images/fireball.png'
+      this.element.src = '../images/'+imageName;
       this.element.classList.add("fireimg");
       this.element.style.position = 'absolute'
       this.element.style.left = `${this.left}px`
@@ -23,6 +23,6 @@ class Obstacle {
     }
   
     updatePosition() {
-      this.top += 4;
+      this.top += 5;
     }
   }

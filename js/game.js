@@ -7,10 +7,11 @@
         this.score=0;
         this.lives=3;
         this.obstacles=[];
+        this.strength=[];
         this.animateId=0;
-        this.player = new Player(this.gameScreen, 230, 550, 180, 200);
-        this.height = 805
-        this.width = 1083
+        this.player = new Player(this.gameScreen, 200, 500, 180, 200);
+        this.height = 865
+        this.width = 1700
 
       
     }
@@ -29,13 +30,17 @@
                 this.obstacles.push(
                     new Obstacle(
                       this.gameScreen,
-                      Math.random() * (this.gameScreen.clientWidth - 40 - 100) + 50,
-                      -200,
-                      80,
-                      40
-                    )
+                      Math.random() * (this.gameScreen.clientWidth) + 50, -20, 80,  40,'fireball.png')
                   )
             }
+           /* if(this.animateId % 1000===0){
+              this.strength.push(
+                  new Obstacle(
+                    this.gameScreen,
+                    Math.random() * (this.gameScreen.clientWidth) + 20, -20, 70,  60,'snitch.png')
+                )
+          }*/
+            
         document.getElementById('score').innerHTML = this.score;
         document.getElementById('lives').innerHTML = this.lives;
         if (this.lives < 1) {
@@ -45,7 +50,11 @@
           if (this.gameOver) {
             this.gameScreen.style.display = 'none'
             this.gameEndScreen.style.display = 'block'
-            alert("Game Over");
+            alert("Game Over and Score is "+ this.score);
+            document.cookie="gameend=end";
+            location.replace("index.html");
+
+
           } else {
             this.animateId = requestAnimationFrame(() => this.gameLoop())
           }
