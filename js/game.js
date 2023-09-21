@@ -34,14 +34,14 @@
             this.update()
             if(this.animateId % 25===0){
                 this.obstacles.push(
-                    new Obstacle(
+                    new FireBall(
                       this.gameScreen,
                       Math.random() * (this.gameScreen.clientWidth) + 50, -20, 80,  40,'fireball.png')
                   )
             }
             if(this.animateId % 100===0){
               this.strength.push(
-                  new Obstacle(
+                  new FireBall(
                     this.gameScreen,
                     Math.random() * (this.gameScreen.clientWidth) + 20, -20, 70,  60,'snitch1.png')
                 )

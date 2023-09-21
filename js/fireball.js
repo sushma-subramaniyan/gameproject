@@ -1,4 +1,4 @@
-class Obstacle {
+class FireBall {
     constructor(gameScreen, left, top, height, width,imageName) {
       this.gameScreen = gameScreen
       this.left = left
@@ -23,6 +23,6 @@ class Obstacle {
     }
   
     updatePosition() {
-      this.top += 8;
+      this.top += 5;
     }
   }
