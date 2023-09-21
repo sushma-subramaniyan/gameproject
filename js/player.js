@@ -1,5 +1,5 @@
 class Player {
-    constructor(gameScreen, left, top, height, width) {
+    constructor(gameScreen, left, top, height, width, imageName) {
       this.gameScreen = gameScreen
       this.left = left
       this.top = top
@@ -9,7 +9,7 @@ class Player {
       this.directionY = 0
       this.element = document.createElement('img')
   
-      this.element.src = 'images/broomstick.png'
+      this.element.src = 'images/'+imageName;
   
       this.element.style.position = 'absolute'
       this.element.style.left = `${this.left}px`

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>secondPage</title>
+    <title>Chase the Snitch</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,10 +45,10 @@
       <div id="page2" style="display:none">
       <div class="container" id ="container1" > 
        
-        <div class="name">
+       <!-- <div class="name">
             <label>Enter Your Name</label>
             <input type="text" name="name" size="50" id="name">
-        </div>
+        </div>-->
         <!---------------------Griffindor--------------------------->
         <div class="card">
             <div class="card-image">
@@ -69,7 +69,7 @@
         </div>
         </div>
         <div class="selector">
-          <button onclick="index.start()">go with this</button>
+          <button onclick="index.start('red.png','Griffindor')">go with this</button>
         </div>
       </div>
       
@@ -94,7 +94,7 @@
 </div>
 </div>
 <div class="selector">
-    <button onclick="index.start()">Go With This</button>
+    <button onclick="index.start('yellow.png', 'Hufflepuff')">Go With This</button>
   </div>
 </div>
 <!---------------------Slytherin--------------------------->
@@ -118,7 +118,7 @@
 </div>
 </div>
 <div class="selector">
-    <button onclick="index.start()">Go With This</button>
+    <button onclick="index.start('green.png', 'Slytherin')">Go With This</button>
   </div>
 </div>
 <!---------------------Ravenclaw--------------------------->
@@ -142,7 +142,7 @@
 </div>
 </div>
 <div class="selector">
-    <button onclick="index.start()">Go With This</button>
+    <button onclick="index.start('blue.png', 'Ravenclaw')">Go With This</button>
   </div>
 </div>
    

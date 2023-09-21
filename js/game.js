@@ -1,5 +1,5 @@
  class Game { 
-    constructor(){
+    constructor(imageName){
         this.gameScreen=document.getElementById('game-screen');
         this.container= document.getElementById('container1');
         this.gameEndScreen = document.getElementById('game-end');
@@ -11,7 +11,7 @@
         this.obstacles=[];
         this.strength=[];
         this.animateId=0;
-        this.player = new Player(this.gameScreen, 200, 500, 180, 200);
+        this.player = new Player(this.gameScreen, 200, 500, 180, 200, imageName);
         this.height = 865
         this.width = 1700
         this.name='';
@@ -20,20 +20,19 @@
     }
      
 
-     start() {
-     // this.gameStartPage.style.display = "none";
+     start(playername) {
        this.container.style.display = "none";
        this.gameScreen.style.display = "block";
        this.gameEndScreen.style.display = "none";
        this.gameScreen.style.height = `${this.height}px`
        this.gameScreen.style.width = `${this.width}px`
-       document.getElementById('playername').innerHTML= document.getElementById('name').value;
-       this.name=document.getElementById('name').value;
+       document.getElementById('playername').innerHTML= playername;
+       this.name=playername;
        this.gameLoop()
      }
         gameLoop(){
             this.update()
-            if(this.animateId % 50===0){
+            if(this.animateId % 25===0){
                 this.obstacles.push(
                     new Obstacle(
                       this.gameScreen,
@@ -44,7 +43,7 @@
               this.strength.push(
                   new Obstacle(
                     this.gameScreen,
-                    Math.random() * (this.gameScreen.clientWidth) + 20, -20, 70,  60,'snitch.png')
+                    Math.random() * (this.gameScreen.clientWidth) + 20, -20, 70,  60,'snitch1.png')
                 )
           }
             
@@ -68,11 +67,8 @@
               document.cookie="gameend=end&name="+this.name+"&highscore="+this.score;
              }else{
               document.cookie="gameend=end&name="+this.getCookie("name")+"&highscore="+this.highscore;
-
              }
-        
             location.replace("game.html");
-
 
           } else {
             this.animateId = requestAnimationFrame(() => this.gameLoop())

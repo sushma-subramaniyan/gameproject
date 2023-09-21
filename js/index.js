@@ -1,12 +1,12 @@
 class Index{
     constructor(){
     }
-    start(){
+    start(imageName, playername){
 
       document.getElementById("page2").style.display ="none";
       document.getElementById('page3').style.display ="block";
-        this.game= new Game();
-        this.game.start();
+        this.game= new Game(imageName);
+        this.game.start(playername);
 
 
         }
