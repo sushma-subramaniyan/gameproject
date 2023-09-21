@@ -18,10 +18,7 @@
 
 </head>
 <body onkeydown="index.getKeyAndMove(event)" onkeyup="index.getKeyUpMove(event)">
-      <audio id="myAudio" controls autoplay style="display:none">
-        <source src="audio/harry_potter_theme.mp3" />
-        Your browser does not support the audio element.
-      </audio>
+     
     <div id="page1"> 
      
         <img src="images/logo.png"class="logo" alt="logo image">
@@ -174,9 +171,31 @@
     <script type="text/javascript" src="js/fireball.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
-    <script type="text/javascript" src="js/index.js">
-    let x= document.getElementById("myAudio").autoplay;
-    console.log(x);
+    <script type="text/javascript" src="js/index.js"></script>
+    <script>
+        window.onload = function() {
+        playSound();
+        };
+    
+        function playSound()
+        {
+           var myAudio = new Audio('audio/harry_potter_theme.mp3'); 
+            if (typeof myAudio.loop == 'boolean')
+            {
+                myAudio.loop = true;
+            }
+            else
+            {
+                myAudio.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play();
+                }, false);
+            }
+            myAudio.volume = 0.3;
+            myAudio.muted=false;
+            myAudio.play();
+        }
+  
     </script>
 
 <script>

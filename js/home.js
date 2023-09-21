@@ -21,7 +21,6 @@ class Home{
     }
     
       redirect() {
-         /* location.replace("game.html");*/
          document.getElementById("page2").style.display ="block";
          document.getElementById('page1').style.display ="none";
         }

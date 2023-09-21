@@ -68,7 +68,7 @@
              }else{
               document.cookie="gameend=end&name="+this.getCookie("name")+"&highscore="+this.highscore;
              }
-            location.replace("game.html");
+            location.replace("index.html");
 
           } else {
             this.animateId = requestAnimationFrame(() => this.gameLoop())
