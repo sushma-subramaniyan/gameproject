@@ -16,8 +16,8 @@ body {
   justify-content: center;
   filter: drop-shadow(2px 3px 5px grey);
   }
-  main{
-  /*  height: calc(100vh - 60px);*/
+  #page1{
+    height: calc(100vh - 60px);
   background-image: url(../images/background.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -26,8 +26,9 @@ body {
     align-items: center;;
     justify-content: center;
     flex-direction: column;
+    position: relative;
   }
-  main button{
+  #page1 button{
     font-family: 'Bigelow Rules', cursive;  
     width: 250px;
     height: 60px;
@@ -41,7 +42,7 @@ body {
     color:white;
     
   }
-  main button:hover{
+  #page1 button:hover{
     transform: translateY(5px);
     transition: 0.3s;
   }
@@ -51,7 +52,7 @@ body {
     font-size: 40px;
   }
 
-  .game-end{
+  #game-end{
     display:none;
   }
   

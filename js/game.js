@@ -3,6 +3,7 @@
         this.gameScreen=document.getElementById('game-screen');
         this.container= document.getElementById('container1');
         this.gameEndScreen = document.getElementById('game-end');
+       // this.gameStartPage = document.getElementById('gameStartPage');
         this.gameOver=false;
         this.score=0;
         this.highscore=0;
@@ -17,8 +18,10 @@
 
       
     }
+     
 
      start() {
+     // this.gameStartPage.style.display = "none";
        this.container.style.display = "none";
        this.gameScreen.style.display = "block";
        this.gameEndScreen.style.display = "none";
@@ -68,7 +71,7 @@
 
              }
         
-            location.replace("index.html");
+            location.replace("game.html");
 
 
           } else {

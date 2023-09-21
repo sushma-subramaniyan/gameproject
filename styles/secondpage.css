@@ -8,7 +8,7 @@
 }
 
 
-body{
+#page2{
    
     background-image: url(../images/image2.png);
     background-size: cover;
@@ -17,16 +17,16 @@ body{
       display: flex;
       align-items: center;;
       justify-content: center;
-      flex-direction: column;
+     /* flex-direction: column;*/
       position: relative;
-      animation: moveRight 6s timing-function delay iteration-count direction fill-mode;
+      
     }
     .container{
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
+       /* flex-wrap: wrap;*/
     }
     .card-image {
         position: relative;

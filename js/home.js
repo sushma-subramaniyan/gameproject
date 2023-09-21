@@ -15,11 +15,15 @@ class Home{
       }else{
         document.getElementById("gameend").style.display = "none";
         document.getElementById("game-intro").style.display = "block";
+
       
       }
     }
-         redirect() {
-          location.replace("game.html");
+    
+      redirect() {
+         /* location.replace("game.html");*/
+         document.getElementById("page2").style.display ="block";
+         document.getElementById('page1').style.display ="none";
         }
          setCookie(cname, cvalue, exdays) {
           const d = new Date();

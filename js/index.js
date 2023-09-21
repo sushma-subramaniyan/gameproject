@@ -2,8 +2,13 @@ class Index{
     constructor(){
     }
     start(){
+
+      document.getElementById("page2").style.display ="none";
+      document.getElementById('page3').style.display ="block";
         this.game= new Game();
         this.game.start();
+
+
         }
             
          getKeyAndMove(event) {

@@ -5,18 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>secondPage</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles/secondpage.css">
+    <link rel="stylesheet" href="./styles/style.css" />
 
 
 
 
 </head>
 <body onkeydown="index.getKeyAndMove(event)" onkeyup="index.getKeyUpMove(event)">
+      <audio id="myAudio" controls autoplay style="display:none">
+        <source src="audio/harry_potter_theme.mp3" />
+        Your browser does not support the audio element.
+      </audio>
+    <div id="page1"> 
+     
+        <img src="images/logo.png"class="logo" alt="logo image">
+        <div id="game-intro" >
+        <!-------------------------start button start------------------------------------>
+            <button onclick="home.redirect()">Start Button</button>  
+            <p>Use left and right arrow keys to control</p> 
+            <p>Chase the snitch to get more score</p>
+        
+          </div>    
+        <!----------------------------game end-------------------------------------------------->
+       <div class="game-end" id ="gameend">
+        <h1>Game Over</h1>
+        <p>High Score: <span id="highscore">0</span></p>
+        <p>Top PlayerName : <span id="prname">3</span></p> 
+        <button onclick="home.redirect()">Restart</button>
+       </div> 
+       
+    </div>
    
-      <div class="container" id ="container1">
+      <div id="page2" style="display:none">
+      <div class="container" id ="container1" > 
        
         <div class="name">
             <label>Enter Your Name</label>
@@ -118,47 +145,43 @@
     <button onclick="index.start()">Go With This</button>
   </div>
 </div>
-
-<div class="highscore">
    
-    <p>Score: <span id="hscore">0dvdfd</span></p>
-  </div>
+
+  
 </div>
   
-   
-   
+    <div id="game-end">
+    
+
+    </div>
+    </div>
+
+    <div id="page3" style="display:none">
     <div class="background"></div>
 
     <div id="game-screen"> 
        
-
-       <!--<img src="/images/broomstick1.png" class="brstick" id="brstick" alt="brromstick"> 
-    
-      <!-- <div class="message">
-        <p>ArrowUp to Control</p>
-       </div>-->
 
       <div class="score">
         <p>Score: <span id="score">0</span></p>
         <p>Lives: <span id="lives">3</span></p> 
         <p>Player Name: <span id="playername"></span></p> 
       </div>
-
-     <!-- <div id="firstBall">
-      
-      </div>  -->
-
     </div>
-    <div id="game-end">
+</div>
     
-
-    </div>
+    <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src="js/obstacle.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/index.js">
+    let x= document.getElementById("myAudio").autoplay;
+    console.log(x);
+    </script>
 
+<script>
 
+</script>
 
     
 </body>
